@@ -61,12 +61,33 @@ $firebase = new FirebaseLib(URL, TOKEN);
 $stockList = $firebase->get(PATH);
 $stockListModel = json_decode($stockList, true);
 
-// $stockCon = (array) $stockList;
-// var_dump((array)$stockList);
-// echo "$stockCon<br>";
-// echo $stockCon[0]."<br>";
+$messageStockBuild = "";
+
 foreach ($stockListModel as $key => $value){
   echo "$value<br>";
+  $messageStockBuild = $messageStockBuild."
+  {
+    'contents': [
+      {
+        'type': 'text',
+        'color': '#555555',
+        'size': 'sm',
+        'text': '$key'
+      },
+      {
+        'color': '#111111',
+        'align': 'end',
+        'text': '$value',
+        'size': 'sm',
+        'type': 'text'
+      }
+    ],
+    'layout': 'horizontal',
+    'type': 'box'
+  }";
+  if ($key != array_key_last($stockListModel)){
+    $messageStockBuild = $messageStockBuild.",";
+  }
 }
   $flexDataJson = '{
           "altText": "Flex Message",
@@ -99,83 +120,7 @@ foreach ($stockListModel as $key => $value){
                 },
                 {
                   "contents": [
-                    {
-                      "contents": [
-                        {
-                          "type": "text",
-                          "color": "#555555",
-                          "size": "sm",
-                          "text": "ITEMS"
-                        },
-                        {
-                          "color": "#111111",
-                          "align": "end",
-                          "text": "3",
-                          "size": "sm",
-                          "type": "text"
-                        }
-                      ],
-                      "layout": "horizontal",
-                      "type": "box",
-                      "margin": "xxl"
-                    },
-                    {
-                      "type": "box",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "size": "sm",
-                          "color": "#555555",
-                          "text": "TOTAL"
-                        },
-                        {
-                          "text": "$7.31",
-                          "align": "end",
-                          "type": "text",
-                          "size": "sm",
-                          "color": "#111111"
-                        }
-                      ],
-                      "layout": "horizontal"
-                    },
-                    {
-                      "layout": "horizontal",
-                      "contents": [
-                        {
-                          "color": "#555555",
-                          "text": "CASH",
-                          "type": "text",
-                          "size": "sm"
-                        },
-                        {
-                          "type": "text",
-                          "align": "end",
-                          "color": "#111111",
-                          "text": "$8.0",
-                          "size": "sm"
-                        }
-                      ],
-                      "type": "box"
-                    },
-                    {
-                      "layout": "horizontal",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "text": "CHANGE",
-                          "color": "#555555",
-                          "size": "sm"
-                        },
-                        {
-                          "type": "text",
-                          "size": "sm",
-                          "text": "$0.69",
-                          "color": "#111111",
-                          "align": "end"
-                        }
-                      ],
-                      "type": "box"
-                    }
+                    '.$messageStockBuild.'
                   ],
                   "type": "box",
                   "spacing": "sm",
