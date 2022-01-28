@@ -3,7 +3,7 @@
 
 
 require "vendor/autoload.php";
-use LINE\LINEBot\MessageBuilder\Flex
+use LINE\LINEBot\MessageBuilder\Flex;
 use LINE\LINEBot;
 use LINE\LINEBot\Constant\Flex\ComponentLayout;
 use LINE\LINEBot\MessageBuilder\RawMessageBuilder;
