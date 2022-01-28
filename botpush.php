@@ -59,7 +59,9 @@ $firebase = new FirebaseLib(URL, TOKEN);
 
 // Reading the stored string
 $stockList = $firebase->get(PATH);
-$stockCon = json_decode(json_encode($stockList), true);
+$stockCon = (array) $stockList;
+var_dump((array)$stockList);
+var_dump($stockList->__toArray());
 echo "$stockCon<br>";
 echo $stockCon[0]."<br>";
 // foreach ($stockList as $key => $value){
