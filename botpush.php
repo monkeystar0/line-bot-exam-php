@@ -61,7 +61,7 @@ $firebase = new FirebaseLib(URL, TOKEN);
 $stockList = $firebase->get(PATH);
 
 echo "$stockList<br>";
-echo "$stockList[0]<br>";
+echo $stockList[0]."<br>";
 // foreach ($stockList as $key => $value){
 //   echo "$value<br>";
 // }
