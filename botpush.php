@@ -60,6 +60,8 @@ $firebase = new FirebaseLib(URL, TOKEN);
 // Reading the stored string
 $stockList = $firebase->get(PATH);
 $stockListModel = json_decode($stockList, true);
+$dateTime = new DateTime();
+$dateStr = $dateTime->format('Y-m-d H:i:s');
 
 $messageStockBuild = "";
 
@@ -78,7 +80,8 @@ foreach ($stockListModel as $key => $value){
         "color": "#111111",
         "align": "end",
         "text": "'.$value.'",
-        "size": "sm",
+        "size": "md",
+        "weight": "bold",
         "type": "text"
       }
     ],
@@ -116,6 +119,14 @@ echo $messageStockBuild;
                   "weight": "bold"
                 },
                 {
+                  "type": "text",
+                  "size": "xl",
+                  "color":"#b85000",
+                  "text": "Date retrieve:'.$dateStr.'",
+                  "margin": "md",
+                  "weight": "bold"
+                },
+                {
                   "margin": "xxl",
                   "type": "separator"
                 },
@@ -131,26 +142,6 @@ echo $messageStockBuild;
                 {
                   "margin": "xxl",
                   "type": "separator"
-                },
-                {
-                  "layout": "horizontal",
-                  "contents": [
-                    {
-                      "type": "text",
-                      "color": "#aaaaaa",
-                      "text": "PAYMENT ID",
-                      "size": "xs"
-                    },
-                    {
-                      "text": "#743289384279",
-                      "type": "text",
-                      "color": "#aaaaaa",
-                      "size": "xs",
-                      "align": "end"
-                    }
-                  ],
-                  "margin": "md",
-                  "type": "box"
                 },
                 {
                   "layout": "vertical",
