@@ -65,26 +65,26 @@ $messageStockBuild = "";
 
 foreach ($stockListModel as $key => $value){
   echo "$value<br>";
-  $messageStockBuild = $messageStockBuild."
+  $messageStockBuild = $messageStockBuild.'
   {
-    'contents': [
+    "contents": [
       {
-        'type': 'text',
-        'color': '#555555',
-        'size': 'sm',
-        'text': '$key'
+        "type": "text",
+        "color": "#555555",
+        "size": "sm",
+        "text": "'.$key.'"
       },
       {
-        'color': '#111111',
-        'align': 'end',
-        'text': '$value',
-        'size': 'sm',
-        'type': 'text'
+        "color": "#111111",
+        "align": "end",
+        "text": "'.$value.'",
+        "size": "sm",
+        "type": "text"
       }
     ],
-    'layout': 'horizontal',
-    'type': 'box'
-  }";
+    "layout": "horizontal",
+    "type": "box"
+  }';
   if ($key != array_key_last($stockListModel)){
     $messageStockBuild = $messageStockBuild.",";
   }
