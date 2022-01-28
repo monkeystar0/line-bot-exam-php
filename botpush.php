@@ -5,33 +5,6 @@
 require "vendor/autoload.php";
 use LINE\LINEBot\MessageBuilder\Flex;
 use LINE\LINEBot;
-use LINE\LINEBot\Constant\Flex\ComponentLayout;
-use LINE\LINEBot\MessageBuilder\RawMessageBuilder;
-use LINE\LINEBot\TemplateActionBuilder\UriTemplateActionBuilder;
-use LINE\Tests\LINEBot\Util\DummyHttpClient;
-use PHPUnit\Framework\TestCase;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\BoxComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ButtonComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\IconComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\ImageComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ComponentBuilder\TextComponentBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\CarouselContainerBuilder;
-use LINE\LINEBot\MessageBuilder\Flex\ContainerBuilder\BubbleContainerBuilder;
-use LINE\LINEBot\MessageBuilder\FlexMessageBuilder;
-use LINE\LINEBot\Constant\Flex\ComponentIconSize;
-use LINE\LINEBot\Constant\Flex\ComponentImageSize;
-use LINE\LINEBot\Constant\Flex\ComponentImageAspectRatio;
-use LINE\LINEBot\Constant\Flex\ComponentImageAspectMode;
-use LINE\LINEBot\Constant\Flex\ComponentFontSize;
-use LINE\LINEBot\Constant\Flex\ComponentFontWeight;
-use LINE\LINEBot\Constant\Flex\ComponentMargin;
-use LINE\LINEBot\Constant\Flex\ComponentSpacing;
-use LINE\LINEBot\Constant\Flex\ComponentButtonStyle;
-use LINE\LINEBot\Constant\Flex\ComponentButtonHeight;
-use LINE\LINEBot\Constant\Flex\ComponentSpaceSize;
-use LINE\LINEBot\Constant\Flex\ComponentGravity;
-use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
-use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 use Firebase\FirebaseLib;
 require 'sendMessage.php';
@@ -61,12 +34,14 @@ $firebase = new FirebaseLib(URL, TOKEN);
 $stockList = $firebase->get(PATH);
 $stockListModel = json_decode($stockList, true);
 $dateTime = new DateTime();
+$timezone = new DateTimeZone('Asia/Bangkok');
+$datetime->setTimezone($timezone);
 $dateStr = $dateTime->format('Y-m-d H:i:s');
 
 $messageStockBuild = "";
 
 foreach ($stockListModel as $key => $value){
-  echo "$value<br>";
+  //echo "$value<br>";
   $messageStockBuild = $messageStockBuild.'
   {
     "contents": [
@@ -92,7 +67,7 @@ foreach ($stockListModel as $key => $value){
     $messageStockBuild = $messageStockBuild.",";
   }
 }
-echo $messageStockBuild;
+//echo $messageStockBuild;
   $flexDataJson = '{
           "altText": "Flex Message",
           "contents": {
@@ -200,7 +175,7 @@ echo $messageStockBuild;
           },
           "type": "flex"
         }';
-  echo $flexDataJson;
+  //echo $flexDataJson;
   $flexDataJsonDeCode = json_decode($flexDataJson,true);
   $datas['url'] = "https://api.line.me/v2/bot/message/push";
   $datas['token'] = $access_token;
