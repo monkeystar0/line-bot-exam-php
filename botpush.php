@@ -61,8 +61,8 @@ $firebase = new FirebaseLib(URL, TOKEN);
 $stockList = $firebase->get(PATH);
 
 
-foreach ($stockList as $stockName => $stockPrice){
-  echo "$stockName : $stockPrice <br>";
+foreach ($stockList as $stockName){
+  echo "$stockName<br>";
 }
   $flexDataJson = '{
           "altText": "Flex Message",
