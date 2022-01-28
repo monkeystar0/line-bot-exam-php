@@ -122,7 +122,14 @@ echo $messageStockBuild;
                   "type": "text",
                   "size": "md",
                   "color":"#b85000",
-                  "text": "Date retrieve:'.$dateStr.'",
+                  "text": "Date retrieve:",
+                  "margin": "md"
+                },
+                {
+                  "type": "text",
+                  "size": "md",
+                  "color":"#b85000",
+                  "text": "'.$dateStr.'",
                   "margin": "md"
                 },
                 {
