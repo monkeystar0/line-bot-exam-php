@@ -33,6 +33,8 @@ use LINE\LINEBot\Constant\Flex\ComponentGravity;
 use LINE\LINEBot\QuickReplyBuilder\ButtonBuilder\QuickReplyButtonBuilder;
 use LINE\LINEBot\QuickReplyBuilder\QuickReplyMessageBuilder;
 use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
+use Firebase\FirebaseLib;
+require 'sendMessage.php';
 
 $access_token = 'TZmVYh0Qhgcz5j3l+ObQL5wZBIokzhzyQ5m9+1OMI2Z/qrXqINozYwQhNvW0Lb/YA4i6x330LfWiTaQPiTT2a+KESHwoINU8h368g+NKQeFMFdq1rlICFBb5kgmIfgeS3nM+2h5Y6+mjkiGl6b3NCwdB04t89/1O/w1cDnyilFU=';
 
@@ -44,12 +46,21 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('15 พฤศจิกายน 62	Almond Pretzel	มูลค่า 46บาท	Auntie Anne’s บน GrabFood');
 
-$response = $bot->pushMessage($pushID, $textMessageBuilder);
+// $response = $bot->pushMessage($pushID, $textMessageBuilder);
 
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+// echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 
 
-require 'sendMessage.php';
+const URL = 'https://jupiter-aa7f0.firebaseio.com/';
+const TOKEN = 'zz5fK2rMIm9TNZfi6zzSIMAz6uUE8ntDSaNpe5x7';
+const PATH = '/stock';
+
+$firebase = new FirebaseLib(URL, TOKEN);
+
+// Reading the stored string
+$name = $firebase->get(PATH);
+
+echo $name;
 
   $flexDataJson = '{
           "altText": "Flex Message",
