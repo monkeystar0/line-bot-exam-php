@@ -52,186 +52,268 @@ echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 require 'sendMessage.php';
 
   $flexDataJson = '{
-	  "type": "flex",
-	  "altText": "Flex Message",
-	  "contents": {
-	    "type": "carousel",
-	    "contents": [
-	      {
-	        "type": "bubble",
-	        "hero": {
-	          "type": "image",
-	          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
-	          "size": "full",
-	          "aspectRatio": "20:13",
-	          "aspectMode": "cover"
-	        },
-	        "body": {
-	          "type": "box",
-	          "layout": "vertical",
-	          "spacing": "sm",
-	          "contents": [
-	            {
-	              "type": "text",
-	              "text": "Arm Chair, White",
-	              "size": "xl",
-	              "weight": "bold",
-	              "wrap": true
-	            },
-	            {
-	              "type": "box",
-	              "layout": "baseline",
-	              "contents": [
-	                {
-	                  "type": "text",
-	                  "text": "$49",
-	                  "flex": 0,
-	                  "size": "xl",
-	                  "weight": "bold",
-	                  "wrap": true
-	                },
-	                {
-	                  "type": "text",
-	                  "text": ".99",
-	                  "flex": 0,
-	                  "size": "sm",
-	                  "weight": "bold",
-	                  "wrap": true
-	                }
-	              ]
-	            }
-	          ]
-	        },
-	        "footer": {
-	          "type": "box",
-	          "layout": "vertical",
-	          "spacing": "sm",
-	          "contents": [
-	            {
-	              "type": "button",
-	              "action": {
-	                "type": "uri",
-	                "label": "Add to Cart",
-	                "uri": "https://linecorp.com"
-	              },
-	              "style": "primary"
-	            },
-	            {
-	              "type": "button",
-	              "action": {
-	                "type": "uri",
-	                "label": "Add to whishlist",
-	                "uri": "https://linecorp.com"
-	              }
-	            }
-	          ]
-	        }
-	      },
-	      {
-	        "type": "bubble",
-	        "hero": {
-	          "type": "image",
-	          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png",
-	          "size": "full",
-	          "aspectRatio": "20:13",
-	          "aspectMode": "cover"
-	        },
-	        "body": {
-	          "type": "box",
-	          "layout": "vertical",
-	          "spacing": "sm",
-	          "contents": [
-	            {
-	              "type": "text",
-	              "text": "Metal Desk Lamp",
-	              "size": "xl",
-	              "weight": "bold",
-	              "wrap": true
-	            },
-	            {
-	              "type": "box",
-	              "layout": "baseline",
-	              "flex": 1,
-	              "contents": [
-	                {
-	                  "type": "text",
-	                  "text": "$11",
-	                  "flex": 0,
-	                  "size": "xl",
-	                  "weight": "bold",
-	                  "wrap": true
-	                },
-	                {
-	                  "type": "text",
-	                  "text": ".99",
-	                  "flex": 0,
-	                  "size": "sm",
-	                  "weight": "bold",
-	                  "wrap": true
-	                }
-	              ]
-	            },
-	            {
-	              "type": "text",
-	              "text": "Temporarily out of stock",
-	              "flex": 0,
-	              "margin": "md",
-	              "size": "xxs",
-	              "color": "#FF5551",
-	              "wrap": true
-	            }
-	          ]
-	        },
-	        "footer": {
-	          "type": "box",
-	          "layout": "vertical",
-	          "spacing": "sm",
-	          "contents": [
-	            {
-	              "type": "button",
-	              "action": {
-	                "type": "uri",
-	                "label": "Add to Cart",
-	                "uri": "https://linecorp.com"
-	              },
-	              "flex": 2,
-	              "color": "#AAAAAA",
-	              "style": "primary"
-	            },
-	            {
-	              "type": "button",
-	              "action": {
-	                "type": "uri",
-	                "label": "Add to wish list",
-	                "uri": "https://linecorp.com"
-	              }
-	            }
-	          ]
-	        }
-	      },
-	      {
-	        "type": "bubble",
-	        "body": {
-	          "type": "box",
-	          "layout": "vertical",
-	          "spacing": "sm",
-	          "contents": [
-	            {
-	              "type": "button",
-	              "action": {
-	                "type": "uri",
-	                "label": "See more",
-	                "uri": "https://linecorp.com"
-	              },
-	              "flex": 1,
-	              "gravity": "center"
-	            }
-	          ]
-	        }
-	      }
-	    ]
-	  }
-	}';
+          "altText": "Flex Message",
+          "contents": {
+            "styles": {
+              "footer": {
+                "separator": true
+              }
+            },
+            "type": "bubble",
+            "body": {
+              "contents": [
+                {
+                  "text": "RECEIPT",
+                  "weight": "bold",
+                  "size": "sm",
+                  "color": "#1DB446",
+                  "type": "text"
+                },
+                {
+                  "type": "text",
+                  "size": "xxl",
+                  "text": "Brown Store",
+                  "margin": "md",
+                  "weight": "bold"
+                },
+                {
+                  "type": "text",
+                  "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
+                  "color": "#aaaaaa",
+                  "wrap": true,
+                  "size": "xs"
+                },
+                {
+                  "margin": "xxl",
+                  "type": "separator"
+                },
+                {
+                  "contents": [
+                    {
+                      "contents": [
+                        {
+                          "size": "sm",
+                          "type": "text",
+                          "text": "Energy Drink",
+                          "color": "#555555"
+                        },
+                        {
+                          "type": "text",
+                          "color": "#111111",
+                          "text": "$2.99",
+                          "size": "sm",
+                          "align": "end"
+                        }
+                      ],
+                      "layout": "horizontal",
+                      "type": "box"
+                    },
+                    {
+                      "type": "box",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "size": "sm",
+                          "text": "Chewing Gum",
+                          "color": "#555555"
+                        },
+                        {
+                          "color": "#111111",
+                          "text": "$0.99",
+                          "size": "sm",
+                          "align": "end",
+                          "type": "text"
+                        }
+                      ],
+                      "layout": "horizontal"
+                    },
+                    {
+                      "layout": "horizontal",
+                      "type": "box",
+                      "contents": [
+                        {
+                          "size": "sm",
+                          "type": "text",
+                          "text": "Bottled Water",
+                          "color": "#555555"
+                        },
+                        {
+                          "color": "#111111",
+                          "size": "sm",
+                          "type": "text",
+                          "text": "$3.33",
+                          "align": "end"
+                        }
+                      ]
+                    },
+                    {
+                      "margin": "xxl",
+                      "type": "separator"
+                    },
+                    {
+                      "contents": [
+                        {
+                          "type": "text",
+                          "color": "#555555",
+                          "size": "sm",
+                          "text": "ITEMS"
+                        },
+                        {
+                          "color": "#111111",
+                          "align": "end",
+                          "text": "3",
+                          "size": "sm",
+                          "type": "text"
+                        }
+                      ],
+                      "layout": "horizontal",
+                      "type": "box",
+                      "margin": "xxl"
+                    },
+                    {
+                      "type": "box",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "size": "sm",
+                          "color": "#555555",
+                          "text": "TOTAL"
+                        },
+                        {
+                          "text": "$7.31",
+                          "align": "end",
+                          "type": "text",
+                          "size": "sm",
+                          "color": "#111111"
+                        }
+                      ],
+                      "layout": "horizontal"
+                    },
+                    {
+                      "layout": "horizontal",
+                      "contents": [
+                        {
+                          "color": "#555555",
+                          "text": "CASH",
+                          "type": "text",
+                          "size": "sm"
+                        },
+                        {
+                          "type": "text",
+                          "align": "end",
+                          "color": "#111111",
+                          "text": "$8.0",
+                          "size": "sm"
+                        }
+                      ],
+                      "type": "box"
+                    },
+                    {
+                      "layout": "horizontal",
+                      "contents": [
+                        {
+                          "type": "text",
+                          "text": "CHANGE",
+                          "color": "#555555",
+                          "size": "sm"
+                        },
+                        {
+                          "type": "text",
+                          "size": "sm",
+                          "text": "$0.69",
+                          "color": "#111111",
+                          "align": "end"
+                        }
+                      ],
+                      "type": "box"
+                    }
+                  ],
+                  "type": "box",
+                  "spacing": "sm",
+                  "margin": "xxl",
+                  "layout": "vertical"
+                },
+                {
+                  "margin": "xxl",
+                  "type": "separator"
+                },
+                {
+                  "layout": "horizontal",
+                  "contents": [
+                    {
+                      "type": "text",
+                      "color": "#aaaaaa",
+                      "text": "PAYMENT ID",
+                      "size": "xs"
+                    },
+                    {
+                      "text": "#743289384279",
+                      "type": "text",
+                      "color": "#aaaaaa",
+                      "size": "xs",
+                      "align": "end"
+                    }
+                  ],
+                  "margin": "md",
+                  "type": "box"
+                },
+                {
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "weight": "bold",
+                      "type": "text",
+                      "text": "Brown Cafe",
+                      "size": "xl"
+                    },
+                    {
+                      "type": "box",
+                      "layout": "baseline",
+                      "margin": "md",
+                      "contents": [
+                        {
+                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                          "type": "icon",
+                          "size": "sm"
+                        },
+                        {
+                          "type": "icon",
+                          "size": "sm",
+                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png"
+                        },
+                        {
+                          "type": "icon",
+                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                          "size": "sm"
+                        },
+                        {
+                          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/review_gold_star_28.png",
+                          "type": "icon",
+                          "size": "sm"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "layout": "vertical",
+              "type": "box"
+            },
+            "hero": {
+              "size": "full",
+              "aspectMode": "cover",
+              "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+              "aspectRatio": "20:13",
+              "type": "image",
+              "action": {
+                "type": "uri",
+                "uri": "http://linecorp.com/"
+              }
+            }
+          },
+          "type": "flex"
+        }';
   $flexDataJsonDeCode = json_decode($flexDataJson,true);
   $datas['url'] = "https://api.line.me/v2/bot/message/push";
   $datas['token'] = $access_token;
