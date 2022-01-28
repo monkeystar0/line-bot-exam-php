@@ -60,10 +60,11 @@ $firebase = new FirebaseLib(URL, TOKEN);
 // Reading the stored string
 $stockList = $firebase->get(PATH);
 
-
-foreach ($stockList as $key => $value){
-  echo "$value<br>";
-}
+echo "$stockList<br>";
+echo "$stockList[0]<br>";
+// foreach ($stockList as $key => $value){
+//   echo "$value<br>";
+// }
   $flexDataJson = '{
           "altText": "Flex Message",
           "contents": {
