@@ -89,6 +89,7 @@ foreach ($stockListModel as $key => $value){
     $messageStockBuild = $messageStockBuild.",";
   }
 }
+echo $messageStockBuild;
   $flexDataJson = '{
           "altText": "Flex Message",
           "contents": {
@@ -208,6 +209,7 @@ foreach ($stockListModel as $key => $value){
           },
           "type": "flex"
         }';
+  echo $flexDataJson;
   $flexDataJsonDeCode = json_decode($flexDataJson,true);
   $datas['url'] = "https://api.line.me/v2/bot/message/push";
   $datas['token'] = $access_token;
