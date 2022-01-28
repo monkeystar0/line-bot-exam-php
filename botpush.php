@@ -58,10 +58,12 @@ const PATH = '/stock';
 $firebase = new FirebaseLib(URL, TOKEN);
 
 // Reading the stored string
-$name = $firebase->get(PATH);
+$stockList = $firebase->get(PATH);
 
-echo $name;
 
+foreach ($stockList as $stockName => $stockPrice){
+  echo "$stockName : $stockPrice <br>";
+}
   $flexDataJson = '{
           "altText": "Flex Message",
           "contents": {
@@ -74,7 +76,7 @@ echo $name;
             "body": {
               "contents": [
                 {
-                  "text": "RECEIPT",
+                  "text": "JUPITER INTELLIGENT AGENT",
                   "weight": "bold",
                   "size": "sm",
                   "color": "#1DB446",
@@ -83,16 +85,9 @@ echo $name;
                 {
                   "type": "text",
                   "size": "xxl",
-                  "text": "Brown Store",
+                  "text": "Stock Fetching",
                   "margin": "md",
                   "weight": "bold"
-                },
-                {
-                  "type": "text",
-                  "text": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
-                  "color": "#aaaaaa",
-                  "wrap": true,
-                  "size": "xs"
                 },
                 {
                   "margin": "xxl",
@@ -100,67 +95,6 @@ echo $name;
                 },
                 {
                   "contents": [
-                    {
-                      "contents": [
-                        {
-                          "size": "sm",
-                          "type": "text",
-                          "text": "Energy Drink",
-                          "color": "#555555"
-                        },
-                        {
-                          "type": "text",
-                          "color": "#111111",
-                          "text": "$2.99",
-                          "size": "sm",
-                          "align": "end"
-                        }
-                      ],
-                      "layout": "horizontal",
-                      "type": "box"
-                    },
-                    {
-                      "type": "box",
-                      "contents": [
-                        {
-                          "type": "text",
-                          "size": "sm",
-                          "text": "Chewing Gum",
-                          "color": "#555555"
-                        },
-                        {
-                          "color": "#111111",
-                          "text": "$0.99",
-                          "size": "sm",
-                          "align": "end",
-                          "type": "text"
-                        }
-                      ],
-                      "layout": "horizontal"
-                    },
-                    {
-                      "layout": "horizontal",
-                      "type": "box",
-                      "contents": [
-                        {
-                          "size": "sm",
-                          "type": "text",
-                          "text": "Bottled Water",
-                          "color": "#555555"
-                        },
-                        {
-                          "color": "#111111",
-                          "size": "sm",
-                          "type": "text",
-                          "text": "$3.33",
-                          "align": "end"
-                        }
-                      ]
-                    },
-                    {
-                      "margin": "xxl",
-                      "type": "separator"
-                    },
                     {
                       "contents": [
                         {
