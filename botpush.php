@@ -33,8 +33,8 @@ $firebase = new FirebaseLib(URL, TOKEN);
 // Reading the stored string
 $stockList = $firebase->get(PATH);
 $stockListModel = json_decode($stockList, true);
-$datetime = new \DateTime('now', new DateTimeZone('Asia/Bangkok'));
-$dateStr = $dateTime->format('Y-m-d H:i:s');
+$datetimeT = new \DateTime('now', new DateTimeZone('Asia/Bangkok'));
+$dateStr = $datetimeT->format('Y-m-d H:i:s');
 
 $messageStockBuild = "";
 
