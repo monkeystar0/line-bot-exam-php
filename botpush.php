@@ -120,11 +120,10 @@ echo $messageStockBuild;
                 },
                 {
                   "type": "text",
-                  "size": "xl",
+                  "size": "md",
                   "color":"#b85000",
                   "text": "Date retrieve:'.$dateStr.'",
-                  "margin": "md",
-                  "weight": "bold"
+                  "margin": "md"
                 },
                 {
                   "margin": "xxl",
@@ -147,12 +146,6 @@ echo $messageStockBuild;
                   "layout": "vertical",
                   "type": "box",
                   "contents": [
-                    {
-                      "weight": "bold",
-                      "type": "text",
-                      "text": "Brown Cafe",
-                      "size": "xl"
-                    },
                     {
                       "type": "box",
                       "layout": "baseline",
