@@ -20,11 +20,19 @@ class ComposerStaticInitea0390d6cea695588c7a75c7618ffacb
         ),
     );
 
+    public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Firebase\\FirebaseInterface' => __DIR__ . '/..' . '/ktamas77/firebase-php/src/firebaseInterface.php',
+        'Firebase\\FirebaseLib' => __DIR__ . '/..' . '/ktamas77/firebase-php/src/firebaseLib.php',
+        'Firebase\\FirebaseStub' => __DIR__ . '/..' . '/ktamas77/firebase-php/src/firebaseStub.php',
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitea0390d6cea695588c7a75c7618ffacb::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitea0390d6cea695588c7a75c7618ffacb::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitea0390d6cea695588c7a75c7618ffacb::$classMap;
 
         }, null, ClassLoader::class);
     }
