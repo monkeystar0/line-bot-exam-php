@@ -13,7 +13,7 @@ require 'sendMessage.php';
 $access_token = 'IIwfUAyTHkjGKid2DSzq76KNkbMyDhssnh4GMLrvFfdpz3YxcyhUvyzyH7U3Wm7gMhJ0QmveQduLPrnNB/efv9DOm2ggQhTdX6xutB/FYF6a8AxDLfxEnETo30wTnEWkKGfXbL/I9Xd4sGInKF01mAdB04t89/1O/w1cDnyilFU=';
 $channelSecret = '37cf944c29594ebdcca14ea7b5c4d2e1';
 
-$pushID = 'U93897309b140d46cb5c59ab439427cd9';
+$pushID = 'U8ae411e618c86b8992459fbe793fb0bb';
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
