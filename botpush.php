@@ -9,9 +9,9 @@ use LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder;
 use Firebase\FirebaseLib;
 require 'sendMessage.php';
 
-$access_token = 'TZmVYh0Qhgcz5j3l+ObQL5wZBIokzhzyQ5m9+1OMI2Z/qrXqINozYwQhNvW0Lb/YA4i6x330LfWiTaQPiTT2a+KESHwoINU8h368g+NKQeFMFdq1rlICFBb5kgmIfgeS3nM+2h5Y6+mjkiGl6b3NCwdB04t89/1O/w1cDnyilFU=';
-
-$channelSecret = 'd9c965b73b66268d124bd5a587311fed';
+//$access_token = 'TZmVYh0Qhgcz5j3l+ObQL5wZBIokzhzyQ5m9+1OMI2Z/qrXqINozYwQhNvW0Lb/YA4i6x330LfWiTaQPiTT2a+KESHwoINU8h368g+NKQeFMFdq1rlICFBb5kgmIfgeS3nM+2h5Y6+mjkiGl6b3NCwdB04t89/1O/w1cDnyilFU=';
+$access_token = 'IIwfUAyTHkjGKid2DSzq76KNkbMyDhssnh4GMLrvFfdpz3YxcyhUvyzyH7U3Wm7gMhJ0QmveQduLPrnNB/efv9DOm2ggQhTdX6xutB/FYF6a8AxDLfxEnETo30wTnEWkKGfXbL/I9Xd4sGInKF01mAdB04t89/1O/w1cDnyilFU=';
+$channelSecret = '37cf944c29594ebdcca14ea7b5c4d2e1';
 
 $pushID = 'U93897309b140d46cb5c59ab439427cd9';
 
